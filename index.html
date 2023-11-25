@@ -44,7 +44,7 @@
             border-radius: 5px;
         }
 
-        h1, h2, p {
+        h1, h2, p, li{
             margin-bottom: 10px;
         }
     </style>
@@ -59,37 +59,51 @@
 
     <section>
         <h2>Motivacion.</h2>
-        <p>A algunos podria parecerle extraña la idea de hacer un analisis de este tipo,
+        <p>
+           A algunos podria parecerle extraña la idea de hacer un analisis de este tipo,
            pero pensando que los adolescentes y jovenes adultos son su principal
            consumidor, y que Chile es el quinto pais que mas consume Anime,
            <a href="https://www.example.com">(Ferjan, 2023)</a>,
            Hacer un proyecto en torno a algo que nos interesa a nosotros y al resto del
-           pais resulta atractivo.<p>
-        <p>Otra de las razones es el potencial de la Ciencia de Datos en este entorno, no
-           deberia ser un secreto que uno de los grandes mercados de la Ciencia de Datos
-           son los algoritmos de recomendacion a usuarios, usados generalmente en
-           sitios de peliculas como Netflix, o en los distintos algoritmos de publicidad.
-        <p>Esto es relevante en el anime pues uno de los sitios que los usuarios usan en
-           este grupo de interes es MyAnimeList, el cual cuenta con aproximadamente
-           17 millones de usuarios, esto representa una oportunidad, pues el mismo sitio
-           provee una API con la cual acceder a esta informacion, lo cual implica que
-           nosotros mismos seremos capaces de acceder a ella.<p>
-        <p>Pero no simplemente vamos a tratar de hacer un algoritmo de recomendacion,
-           si no mas bien, vamos a buscar distintos grupos dentro de este sitio, con lo cual
-           queremos ver si estos usuarios se encuentran polarizados en sus gustos.<p>
+           pais resulta atractivo.
+        </p>
+        <p>
+            Otra de las razones es el potencial de la Ciencia de Datos en este entorno, no
+            deberia ser un secreto que uno de los grandes mercados de la Ciencia de Datos
+            son los algoritmos de recomendacion a usuarios, usados generalmente en
+            sitios de peliculas como Netflix, o en los distintos algoritmos de publicidad.
+        </p>
+        <p>
+            Esto es relevante en el anime pues uno de los sitios que los usuarios usan en
+            este grupo de interes es MyAnimeList, el cual cuenta con aproximadamente
+            17 millones de usuarios, esto representa una oportunidad, pues el mismo sitio
+            provee una API con la cual acceder a esta informacion, lo cual implica que
+            nosotros mismos seremos capaces de acceder a ella.
+        </p>
+        <p>
+            Pero no simplemente vamos a tratar de hacer un algoritmo de recomendacion,
+            si no mas bien, vamos a buscar distintos grupos dentro de este sitio, con lo cual
+            queremos ver si estos usuarios se encuentran polarizados en sus gustos.
+        </p>
     </section>
 
     <section>
         <h2>Información recolectada</h2>
-        <p>El proyecto lo desarollamos con Python en varios Jupyter Notebook, con
-           varias librerias especializadas en Ciencia de Datos, como Pandas, Numpy, Matplotlib,
-           sklearn, etc. Y otras librerias para manejar el webscraping y el uso de API's, como
-           requests y BeautifulSoup.<p>
-        <p>Para la recoleccion de informacion usamos requests y BeautifulSoup, debido a la
+        <p>
+            El proyecto lo desarollamos con Python en varios Jupyter Notebook, con
+            varias librerias especializadas en Ciencia de Datos, como Pandas, Numpy, Matplotlib,
+            sklearn, etc. Y otras librerias para manejar el webscraping y el uso de API's, como
+            requests y BeautifulSoup.
+        </p>
+        <p>
+            Para la recoleccion de informacion usamos requests y BeautifulSoup, debido a la
             cantidad de tiempo que se toma recopilar la informacion lo hicimos por 20 partes
             cada serie, con un total de 5 series, el tiempo de procesamiento fue probablemente
-            mas de 100 horas en total considerando todas las series.<p>
-        <p>La informacion que recolectamos fue la siguiente:<p>
+            mas de 100 horas en total considerando todas las series.
+        </p>
+        <p>
+            La informacion que recolectamos fue la siguiente:
+        <p>
         <ul>
             <li>Las listas de  calificaciones de 20 mil usuarios, de las cuales aproximadamente
                 7000 tenian al menos una calificacion a un anime que hayan completado. Esto fue
@@ -105,13 +119,17 @@
                 los distintos animes.<br>Esta tambien fue hecha en 2 series, una para encontrar
                 todos los animes de AnimePlanet y una segunda para obtener las tags.</li>
         </ul>
-        <p>Una vez que recopilamos toda la informacion la recopilamos en archivos unicos
-           para su posterior procesamiento.<p>
+        <p>
+            Una vez que recopilamos toda la informacion la recopilamos en archivos unicos
+            para su posterior procesamiento.
+        </p>
     </section>
     <section>
         <h2>Procesamiento de informacion</h2>
-        <p>Una vez recolectada esa informacion, pasamos a la parte de procesamiento, lo primero queremos
-           hicimos fue convertirla generalmente a formatos mas amigables.<p>
+        <p>
+            Una vez recolectada esa informacion, pasamos a la parte de procesamiento, lo primero queremos
+            hicimos fue convertirla generalmente a formatos mas amigables.
+        </p>
         <p>Por ejemplo:<p>
         <ul>
             <li>Las listas de calificaciones por usuario se convirtieron a la forma de una.
@@ -144,7 +162,115 @@
                 </table>
                 Donde cada columna representa un anime y cada fila un usuario, y cada valor es
                 la calificacion que el usuario le dio, NaN significa que el usuario no lo califico,
-                Y en nuestro caso, tambien significa que no lo completo.
+                Y en nuestro caso, tambien significa que no lo vio completo.
+            </li>
+            <li>Los detalles de los distintos animes se convirtieron a una tabla, no es apropiado
+                nombrar a esta una matriz, pues no es estrictamente numerica.<br>
+                Para cada anime, contiene:
+                <table>
+                    <tr>
+                        <th>Columna</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>id</td>
+                        <td>El id del anime</td>
+                    </tr>
+                    <tr>
+                        <td>title</td>
+                        <td>El nombre del anime</td>
+                    </tr>
+                    <tr>
+                        <td>main_picture</td>
+                        <td>la url hacia su imagen</td>
+                    </tr>
+                    <tr>
+                        <td>alternative_titles</td>
+                        <td>nombres alternativos.</td>
+                    </tr>
+                    <tr>
+                        <td>start_date, end_date</td>
+                        <td>Fecha de inicio y de fin de la emisión respectivamente</td>
+                    </tr>
+                    <tr>
+                        <td>synopsis</td>
+                        <td>Una breve descripción de la trama.</td>
+                    </tr>
+                    <tr>
+                        <td>mean</td>
+                        <td>El promedio de calificaciones.</td>
+                    </tr>
+                    <tr>
+                        <td>rank</td>
+                        <td>Su posicionamiento respecto a su promedio de calificación, el mean.</td>
+                    </tr>
+                    <tr>
+                        <td>popularity</td>
+                        <td>Su posicionamiento respecto a la siguiente columna, num_list_users.</td>
+                    </tr>
+                    <tr>
+                        <td>num_list_users</td>
+                        <td>Cuantos usuarios la tienen en su lista, Hayan calificado o terminado de ver el anime, o no.</td>
+                    </tr>
+                    <tr>
+                        <td>num_scoring_users</td>
+                        <td>Cuantos usuarios la han calificado.</td>
+                    </tr>
+                    <tr>
+                        <td>media_type</td>
+                        <td>Indica si fue emitido por television (tv), si para consumo directo en el hogar (ova), si era un
+                            video musical (music), si era una pelicula (movie), etc...</td>
+                    </tr>
+                    <tr>
+                        <td>status</td>
+                        <td>Indica si sigue o no en emision.</td>
+                    </tr>
+                    <tr>
+                        <td>num_episodes</td>
+                        <td>La cantidad de episodios.</td>
+                    </tr>
+                    <tr>
+                        <td>start_season</td>
+                        <td>Año y temporada de emision, en la industria del anime la temporada es una caracteristica
+                            importante, si, se refiere a si salio en invierno, otoño, verano, primavera, ademas de
+                            contener el año.</td>
+                    </tr>
+                    <tr>
+                        <td>studios</td>
+                        <td>Las empresas, en este caso llamadas estudios, que estuvieron involucradas en la produccion.</td>
+                    </tr>
+                </table>
+            </li>
+            <li>Las distintas tags, o generos, que obtuvimos de AnimePlanet tambien fueron usadas para crear una matriz,
+                Esta tiene el siguiente formato:
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Tag_1</th>
+                        <th>Tag_2</th>
+                        <th>...</th>
+                    </tr>
+                    <tr>
+                        <td>Anime_1</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>...</td>
+                    </tr>
+                    <tr>
+                        <td>Anime_2</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>...</td>
+                    </tr>
+                    <tr>
+                        <td>...</td>
+                        <td>...</td>
+                        <td>...</td>
+                        <td>...</td>
+                    </tr>
+                </table>
+                Donde cada columna representa un genero/tag y cada fila un anime. Un 0 indicando que el
+                Anime no tiene esa tag y un 1 indicando que si la tiene.
             </li>
         </ul>
     </section>
