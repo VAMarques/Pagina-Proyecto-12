@@ -22,6 +22,22 @@
             border-radius: 5px;
         }
 
+        table {
+            width: 300px;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        tr:nth-child(even) {
+            background-color: #C4B7D7; /* Add alternating background color to even rows */
+        }
+
         img {
             max-width: 100%;
             height: auto;
@@ -91,9 +107,6 @@
         </ul>
         <p>Una vez que recopilamos toda la informacion la recopilamos en archivos unicos
            para su posterior procesamiento.<p>
-    </section>
-
-    <section>
         <h2>Procesamiento de informacion</h2>
         <p>Una vez recolectada esa informacion, pasamos a la parte de procesamiento, lo primero queremos
            hicimos fue convertirla generalmente a formatos mas amigables.<p>
@@ -104,30 +117,30 @@
         </ul>
         <table>
             <tr>
-                <th>Usuario</th>
-                <th>Anime 1</th>
-                <th>Anime 2</th>
-                <th>Anime 3</th>
-                <th>Anime 4</th>
-                <th>Anime 5</th>
+                <th></th>
+                <th>Anime_1</th>
+                <th>Anime_2</th>
+                <th>...</th>
             </tr>
             <tr>
-                <td>Usuario 1</td>
+                <td>User_1</td>
                 <td>Calificacion 1</td>
                 <td>Calificacion 2</td>
-                <td>Calificacion 3</td>
-                <td>Calificacion 4</td>
-                <td>Calificacion 5</td>
+                <td>...</td>
             </tr>
             <tr>
-                <td>Usuario 2</td>
+                <td>User_2</td>
                 <td>Calificacion 1</td>
                 <td>Calificacion 2</td>
-                <td>Calificacion 3</td>
-                <td>Calificacion 4</td>
-                <td>Calificacion 5</td>
+                <td>...</td>
             </tr>
-              </p>
+            <tr>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+            </tr>
+        </table>
     </section>
   
     <section>
