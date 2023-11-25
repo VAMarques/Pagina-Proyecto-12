@@ -35,7 +35,11 @@
         }
 
         tr:nth-child(even) {
-            background-color: #C4B7D7; /* Add alternating background color to even rows */
+            background-color: rgba(221, 221, 221, 0.5);
+        }
+
+        th:nth-child(even),td:nth-child(even) {
+            background-color: rgba(221, 221, 221, 0.5);
         }
 
         img {
@@ -113,34 +117,38 @@
         <p>Por ejemplo:<p>
         <ul>
             <li>Las listas de calificaciones por usuario se convirtieron a la forma de una.
-                matriz, con el siguiente formato:</li>
+                matriz, con el siguiente formato:
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Anime_1</th>
+                        <th>Anime_2</th>
+                        <th>...</th>
+                    </tr>
+                    <tr>
+                        <td>User_1</td>
+                        <td>1</td>
+                        <td>10</td>
+                        <td>...</td>
+                    </tr>
+                    <tr>
+                        <td>User_2</td>
+                        <td>6</td>
+                        <td>NaN</td>
+                        <td>...</td>
+                    </tr>
+                    <tr>
+                        <td>...</td>
+                        <td>...</td>
+                        <td>...</td>
+                        <td>...</td>
+                    </tr>
+                </table>
+                Donde cada columna representa un anime y cada fila un usuario, y cada valor es
+                la calificacion que el usuario le dio, NaN significa que el usuario no lo califico,
+                Y en nuestro caso, tambien significa que no lo completo.
+            </li>
         </ul>
-        <table>
-            <tr>
-                <th></th>
-                <th>Anime_1</th>
-                <th>Anime_2</th>
-                <th>...</th>
-            </tr>
-            <tr>
-                <td>User_1</td>
-                <td>Calificacion 1</td>
-                <td>Calificacion 2</td>
-                <td>...</td>
-            </tr>
-            <tr>
-                <td>User_2</td>
-                <td>Calificacion 1</td>
-                <td>Calificacion 2</td>
-                <td>...</td>
-            </tr>
-            <tr>
-                <td>...</td>
-                <td>...</td>
-                <td>...</td>
-                <td>...</td>
-            </tr>
-        </table>
     </section>
   
     <section>
