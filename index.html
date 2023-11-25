@@ -133,7 +133,7 @@
         <p>Por ejemplo:<p>
         <ul>
             <li>Las listas de calificaciones por usuario se convirtieron a la forma de una.
-                matriz, con el siguiente formato:
+                matriz, llamada <strong>users_df</strong>, con el siguiente formato:<br><br>
                 <table>
                     <tr>
                         <th></th>
@@ -159,15 +159,16 @@
                         <td>...</td>
                         <td>...</td>
                     </tr>
-                </table>
+                </table><br>
                 Donde cada columna representa un anime y cada fila un usuario, y cada valor es
                 la calificacion que el usuario le dio, NaN significa que el usuario no lo califico,
                 Y en nuestro caso, tambien significa que no lo vio completo.
             </li>
-            <li>Los detalles de los distintos animes se convirtieron a una tabla, no es apropiado
-                nombrar a esta una matriz, pues no es estrictamente numerica.<br>
-                Para cada anime, contiene:
-                <table>
+            <li>Los detalles de los distintos animes se convirtieron a una tabla llamada
+                <strong>detalles_anime</strong>, no es apropiado nombrar a esta una matriz,
+                pues no es estrictamente numerica.<br>
+                Para cada anime, contiene:<br><br>
+                <table style="width: 500px; border-collapse: collapse; margin: 0 auto;">
                     <tr>
                         <th>Columna</th>
                         <th>Descripción</th>
@@ -240,9 +241,42 @@
                         <td>Las empresas, en este caso llamadas estudios, que estuvieron involucradas en la produccion.</td>
                     </tr>
                 </table>
-            </li>
-            <li>Las distintas tags, o generos, que obtuvimos de AnimePlanet tambien fueron usadas para crear una matriz,
-                Esta tiene el siguiente formato:
+            </li><br>
+            <li>La informacion de AnimePlanet tambien se proceso, utilizamos una base de Datos
+                externa, la cual enlaza id's de MyAnimeList con las URL de AnimePlanet para
+                poder tener las id's en esta tabla, debido a esta union entre ambos sitios,
+                esta matriz recibe el nombre de <strong>unified_df</strong>, sus columnas son:<br><br>
+                <table style="width: 500px; border-collapse: collapse; margin: 0 auto;">
+                    <tr>
+                        <th>Columna</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>Anime</td>
+                        <td>El nombre del anime</td>
+                    </tr>
+                    <tr>
+                        <td>URL</td>
+                        <td>La URL hacia ese anime en AnimePlanet</td>
+                    </tr>
+                    <tr>
+                        <td>Tags</td>
+                        <td>Todas las tags que tiene el anime</td>
+                    </tr>
+                    <tr>
+                        <td>Alts</td>
+                        <td>Nombres alternativos para el anime.</td>
+                    </tr>
+                    <tr>
+                        <td>id</td>
+                        <td>La id que lo relaciona con MyAnimeList</td>
+                    </tr>
+                </table>
+            </li><br>
+            <li><strong>unified_df</strong> en cierto punto del proyecto es transformada en una matriz,
+                provocando que sus columnas sean todos los tags de Animeplanet y sus filas sean todos los
+                Animes con los que estamos trabajando en el proyecto.
+                Esta tiene el siguiente formato:<br><br>
                 <table>
                     <tr>
                         <th></th>
@@ -268,9 +302,44 @@
                         <td>...</td>
                         <td>...</td>
                     </tr>
-                </table>
-                Donde cada columna representa un genero/tag y cada fila un anime. Un 0 indicando que el
-                Anime no tiene esa tag y un 1 indicando que si la tiene.
+                </table><br>
+                Donde cada columna representa un genero/tag y cada fila un anime con su id
+                de MyAnimeList.<br>Por cada dato tiene un 0 indicando que el Anime no
+                tiene esa tag y un 1 indicando que si la tiene.
+            </li>
+            <li>Finalmente, como las matrices <strong>users_df</strong> y <strong>unified_df</strong> ahora comparten id's
+                de anime, podemos hacer una multiplicacion matricial entre ambas respecto a este dato.<br><br>
+                Esta nueva matriz, que representa los gustos de anime, se llama <strong>cluster_df</strong>, y es la que sera usada
+                para nuestra meta de agrupar usuarios.:<br><br>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Tag_1</th>
+                        <th>Tag_2</th>
+                        <th>...</th>
+                    </tr>
+                    <tr>
+                        <td>Anime_1</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>...</td>
+                    </tr>
+                    <tr>
+                        <td>Anime_2</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>...</td>
+                    </tr>
+                    <tr>
+                        <td>...</td>
+                        <td>...</td>
+                        <td>...</td>
+                        <td>...</td>
+                    </tr>
+                </table><br>
+                Donde cada columna representa un genero/tag y cada fila un anime con su id
+                de MyAnimeList.<br>Por cada dato tiene un 0 indicando que el Anime no
+                tiene esa tag y un 1 indicando que si la tiene.
             </li>
         </ul>
     </section>
