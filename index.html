@@ -37,22 +37,99 @@
 <body>
     <header>
         <h1>Proyecto de Ciencia de Datos, Grupo 12</h1>
-        <h1>Clustering de usuarios de MyAnimeList:</h1>
-        <h1>Hallando patrones y tendencias por comunidad</h1>
+        <h1>Clustering de usuarios de MyAnimeList:<br>
+          Hallando patrones y tendencias por comunidad</h1>
     </header>
 
     <section>
         <h2>Motivacion.</h2>
         <p>A algunos podria parecerle extraña la idea de hacer un analisis de este tipo,
-            Pero no solo varios cientificos de datos somos fans del anime, sino que tambien
-            el anime es un medio altamente popular dentro de Chile, 
-            <a href="https://www.example.com">
-                siendo este el 5to pais en el cual el
-                anime es mas popular, (Ferjan, 2023)
-            </a>
-        <p>
+           pero pensando que los adolescentes y jovenes adultos son su principal
+           consumidor, y que Chile es el quinto pais que mas consume Anime,
+           <a href="https://www.example.com">(Ferjan, 2023)</a>,
+           Hacer un proyecto en torno a algo que nos interesa a nosotros y al resto del
+           pais resulta atractivo.<p>
+        <p>Otra de las razones es el potencial de la Ciencia de Datos en este entorno, no
+           deberia ser un secreto que uno de los grandes mercados de la Ciencia de Datos
+           son los algoritmos de recomendacion a usuarios, usados generalmente en
+           sitios de peliculas como Netflix, o en los distintos algoritmos de publicidad.
+        <p>Esto es relevante en el anime pues uno de los sitios que los usuarios usan en
+           este grupo de interes es MyAnimeList, el cual cuenta con aproximadamente
+           17 millones de usuarios, esto representa una oportunidad, pues el mismo sitio
+           provee una API con la cual acceder a esta informacion, lo cual implica que
+           nosotros mismos seremos capaces de acceder a ella.<p>
+        <p>Pero no simplemente vamos a tratar de hacer un algoritmo de recomendacion,
+           si no mas bien, vamos a buscar distintos grupos dentro de este sitio, con lo cual
+           queremos ver si estos usuarios se encuentran polarizados en sus gustos.<p>
     </section>
 
+    <section>
+        <h2>Información recolectada</h2>
+        <p>El proyecto lo desarollamos con Python en varios Jupyter Notebook, con
+           varias librerias especializadas en Ciencia de Datos, como Pandas, Numpy, Matplotlib,
+           sklearn, etc. Y otras librerias para manejar el webscraping y el uso de API's, como
+           requests y BeautifulSoup.<p>
+        <p>Para la recoleccion de informacion usamos requests y BeautifulSoup, debido a la
+            cantidad de tiempo que se toma recopilar la informacion lo hicimos por 20 partes
+            cada serie, con un total de 5 series, el tiempo de procesamiento fue probablemente
+            mas de 100 horas en total considerando todas las series.<p>
+        <p>La informacion que recolectamos fue la siguiente:<p>
+        <ul>
+            <li>Las listas de  calificaciones de 20 mil usuarios, de las cuales aproximadamente
+                7000 tenian al menos una calificacion a un anime que hayan completado. Esto fue
+                hecho en 2 series, una para tener los usuarios y una segunda para obtener sus
+                calificaciones.</li>
+            <li>Detalles de los animes calificados por los usuarios en MyAnimeList, como su id,
+                año de lanzamiento, cantidad de usuarios por ese anime, la calificiacion promedio,
+                etc.</li>
+            <li>La informacion de los Animes presentes en Animeplanet, otro sitio que recopila
+                Informacion de distintos animes, en este caso sacamos informacion de este sitio
+                Debido a la mejor calidad de sus tags, tambien conocidas como generos,
+                las cuales tenian una mayor variedad en cuanto a tipo, clasificando asi mejor
+                los distintos animes.<br>Esta tambien fue hecha en 2 series, una para encontrar
+                todos los animes de AnimePlanet y una segunda para obtener las tags.</li>
+        </ul>
+        <p>Una vez que recopilamos toda la informacion la recopilamos en archivos unicos
+           para su posterior procesamiento.<p>
+    </section>
+
+    <section>
+        <h2>Procesamiento de informacion</h2>
+        <p>Una vez recolectada esa informacion, pasamos a la parte de procesamiento, lo primero queremos
+           hicimos fue convertirla generalmente a formatos mas amigables.<p>
+        <p>Por ejemplo:<p>
+        <ul>
+            <li>Las listas de calificaciones por usuario se convirtieron a la forma de una.
+                matriz, con el siguiente formato:
+                <table>
+                    <tr>
+                      <th>Company</th>
+                      <th>Contact</th>
+                      <th>Country</th>
+                    </tr>
+                    <tr>
+                      <td>Alfreds Futterkiste</td>
+                      <td>Maria Anders</td>
+                      <td>Germany</td>
+                    </tr>
+                    <tr>
+                      <td>Centro comercial Moctezuma</td>
+                      <td>Francisco Chang</td>
+                      <td>Mexico</td>
+                    </tr>
+                </table>
+            </li>
+            <li>Detalles de los animes calificados por los usuarios en MyAnimeList, como su id,
+                año de lanzamiento, cantidad de usuarios por ese anime, la calificiacion promedio,
+                etc.</li>
+            <li>La informacion de los Animes presentes en Animeplanet, otro sitio que recopila
+                Informacion de distintos animes, en este caso sacamos informacion de este sitio
+                Debido a la mejor calidad de sus tags, tambien conocidas como generos,
+                las cuales tenian una mayor variedad en cuanto a tipo, clasificando asi mejor
+                los distintos animes.</li>
+              </p>
+    </section>
+  
     <section>
         <img src="assets/img/reviews_por_anime.png" width="300" height="200">
         <h2>Title Here</h2>
