@@ -319,15 +319,15 @@
                         <th>...</th>
                     </tr>
                     <tr>
-                        <td>Anime_1</td>
-                        <td>1</td>
-                        <td>0</td>
+                        <td>User_1</td>
+                        <td>613</td>
+                        <td>7</td>
                         <td>...</td>
                     </tr>
                     <tr>
-                        <td>Anime_2</td>
+                        <td>User_2</td>
+                        <td>18</td>
                         <td>0</td>
-                        <td>1</td>
                         <td>...</td>
                     </tr>
                     <tr>
@@ -337,17 +337,214 @@
                         <td>...</td>
                     </tr>
                 </table><br>
-                Donde cada columna representa un genero/tag y cada fila un anime con su id
-                de MyAnimeList.<br>Por cada dato tiene un 0 indicando que el Anime no
-                tiene esa tag y un 1 indicando que si la tiene.
+                Donde cada columna representa un genero/tag y cada fila un usuario.<br>
+                Por cada dato tiene la suma de calificaciones de animes que tenian esa tag.<br>
+                Por ejemplo, el User_1 ve mucho anime, y da altas calificaciones, y por tanto
+                su puntaje en la tag_1 es de 613.<br>
+                En cambio, la tag_2 es menos popular, y como User_2 no ha calificado mucho anime,
+                su puntaje es de 0.<br><br>
+                Como queremos agrupar los usuarios por gustos, no queremos que ver mucho anime cambie
+                tu gusto, por tanto, normalizamos esta matriz tal que cada usuario sume 1 en sus gustos,
+                esto se hace dividiendo por la suma de sus gustos.<br>
             </li>
         </ul>
     </section>
   
     <section>
+        <h2>Analisis de informacion y resultados.</h2>
+        <p>
+            Con estos distintos conjuntos de datos, empezamos a responder ciertas preguntas que
+            teniamos.
+        </p>
+        <p>
+            La primera de estas que pudimos responder era sobre si los usuarios siguen la ley de pareto,
+            la cual dice que el 80% de los efectos proviene del 20% de las causas.
+        </p>
+        <p>
+            En nuestro caso, la ley de Pareto diría que el 20% de los usuarios hace 80% de las
+            calificaciones, o que el 20% de los anime tienen el 80% de las calificaciones.
+        </p>
+        <p>
+            Simplemente calculando en <strong>users_df</strong> la cantidad de reviews hechas por usuario,
+            tuvimos el siguiente resultado.
+        </p>
+        <img src="assets/img/reviews_por_usuario.png" width="300" height="200">
+        <p>
+            Los resultados dicen:<br>
+            <em>El 20% de los usuarios tiene 387989 calificaciones, lo cual es un 69.53% del total</em><br>
+            <em>El 80% de los usuarios tiene 170050 calificaciones, lo cual es un 30.47% del total</em><br>
+            Lo cual a pesar de no ser exactamente 80-20, si es bastante cercano, especialmente tomando en
+            cuenta que nuestra recoleccion de informacion no podia tener mas de 1000 animes por usuario.<br>
+            Por tanto, podemos decir que la ley de Pareto se cumple en este caso.
+        </p>
+        <p>Podemos probar a hacer lo mismo pero desde la perpectiva de los mismos anime.</p>
         <img src="assets/img/reviews_por_anime.png" width="300" height="200">
-        <h2>Title Here</h2>
-        <p>Body text goes here. Keep it bland and simple.</p>
+        <p>
+            Los resultados dicen:<br>
+            <em>El 20% de los anime tiene 479727 calificaciones, lo cual es un 85.97% del total</em><br>
+            <em>El 80% de los anime tiene 78312 calificaciones, lo cual es un 14.03% del total</em><br>
+            Lo cual a pesar de no ser exactamente 80-20, si es bastante cercano, especialmente tomando en
+            cuenta que nuestra recoleccion de informacion no podia tener mas de 1000 animes por usuario.<br>
+            Por tanto, podemos decir que la ley de Pareto se cumple en este caso.
+        </p>
+        <p>
+            Desafortunadamente, la version entregada del proyecto presentaba algunas fallas en estos graficos,
+            algunos graficos estaban mal hechos y mal graficados.
+        </p>
+        <p>
+            Lo segundo que pudimos hacer fue encontrar los distintos animes de culto, encontramos estadisticamente
+            este conjunto de animes, los cuales tienen la caracteristica de ser antiguos pero populares.
+        </p>
+        <img src="assets/img/animes_destacados.png" width="300" height="200">
+        <p>
+            Estos fueron encontrados con la informacion dentro de <strong>detalles_anime</strong>.
+        </p>
+        <p>
+            Otra cosa que encontramos fueron los generos mas y menos correlacionados.
+        </p>
+        <p>
+            Primero veamos los mas correlacionados.
+        </p>
+        <table style="width: 500px; border-collapse: collapse; margin: 0 auto;">
+            <tr>
+                <th>Generos mas<br>relacionados.</th>
+                <th>Genero 1</th>
+                <th>Genero 2</th>
+                <th>Porcentaje de<br>correlacion.</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>BL</td>
+                <td>Shounen-ai</td>
+                <td>96.9%</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>GL</td>
+                <td>Shoujo-ai</td>
+                <td>96.6%</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Earthquake</td>
+                <td>Natural Disaster</td>
+                <td>93.5%</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Running</td>
+                <td>Track and Field</td>
+                <td>81.6%</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Sentai</td>
+                <td>Tokusatsu</td>
+                <td>81.6%</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Kingdom Building</td>
+                <td>Management</td>
+                <td>78.3%</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Boarding House</td>
+                <td>Neighbors</td>
+                <td>76.7%</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Art</td>
+                <td>Art School</td>
+                <td>76.5%</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Adult Couples</td>
+                <td>Mature Romance</td>
+                <td>74.9%</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Flower Shop</td>
+                <td>Plants</td>
+                <td>70.7%</td>
+            </tr>
+        </table>
+        <p>
+            Ahora los mas antirrelacionados.
+        </p>
+        <table style="width: 500px; border-collapse: collapse; margin: 0 auto;">
+            <tr>
+                <th>Generos menos<br>relacionados.</th>
+                <th>Genero 1</th>
+                <th>Genero 2</th>
+                <th>Porcentaje de<br>correlacion.</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Based on a Manga</td>
+                <td>Original Work</td>
+                <td>-32.8%</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Based on a Light Novel</td>
+                <td>Based on a Manga</td>
+                <td>-23.3%</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Original Work</td>
+                <td>Shounen</td>
+                <td>-19.9%</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Action</td>
+                <td>Slice of Life</td>
+                <td>-19.7%</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Fantasy</td>
+                <td>Sci Fi</td>
+                <td>-18.1%</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Action</td>
+                <td>Comedy</td>
+                <td>-17.5%</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Based on a Manga</td>
+                <td>Based on a Video Game</td>
+                <td>-17.0%</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Seinen</td>
+                <td>Shounen</td>
+                <td>-16.2%</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Action</td>
+                <td>Romance</td>
+                <td>-15.5%</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Based on a Manga</td>
+                <td>Based on a Visual Novel</td>
+                <td>-14.5%</td>
+            </tr>
+        </table>
+
     </section>
 
     <footer>
