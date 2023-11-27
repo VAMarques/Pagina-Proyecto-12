@@ -1,2 +1,2 @@
-# Pagina-Proyecto-12
-Repositorio para poder hacer la pagina del proyecto.
+# Página-Proyecto-12
+Repositorio para poder hacer la página del proyecto.
