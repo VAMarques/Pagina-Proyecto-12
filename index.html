@@ -7,14 +7,16 @@
     <title>Your Bland Website</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: "Fira Sans", Arial, sans-serif;
             text-align: center;
             margin: 0;
             padding: 0;
             background-color: #F5F5F5;
         }
 
-        header, section, footer {
+        header,
+        section,
+        footer {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
@@ -28,7 +30,8 @@
             border-collapse: collapse;
         }
 
-        th, td {
+        th,
+        td {
             border: 1px solid #ddd;
             padding: 8px;
             text-align: left;
@@ -44,7 +47,10 @@
             border-radius: 5px;
         }
 
-        h1, h2, p, li{
+        h1,
+        h2,
+        p,
+        li {
             margin-bottom: 10px;
         }
     </style>
@@ -54,35 +60,35 @@
     <header>
         <h1>Proyecto de Ciencia de Datos, Grupo 12</h1>
         <h1>Clustering de usuarios de MyAnimeList:<br>
-          Hallando patrones y tendencias por comunidad</h1>
+            Hallando patrones y tendencias por comunidad</h1>
     </header>
 
     <section>
-        <h2>Motivacion.</h2>
+        <h2>Motivacíón.</h2>
         <p>
-           A algunos podria parecerle extraña la idea de hacer un analisis de este tipo,
-           pero pensando que los adolescentes y jovenes adultos son su principal
-           consumidor, y que Chile es el quinto pais que mas consume Anime,
-           <a href="https://www.example.com">(Ferjan, 2023)</a>,
-           Hacer un proyecto en torno a algo que nos interesa a nosotros y al resto del
-           pais resulta atractivo.
+            A algunos podría parecerle extraña la idea de hacer un análisis de este tipo,
+            pero pensando que los adolescentes y jovenes adultos son su principal
+            consumidor, y que Chile es el quinto país que más consume anime,
+            <a href="https://www.example.com">(Ferjan, 2023)</a>,
+            hacer un proyecto en torno a algo que nos interesa a nosotros y al resto del
+            país resulta atractivo.
         </p>
         <p>
-            Otra de las razones es el potencial de la Ciencia de Datos en este entorno, no
-            deberia ser un secreto que uno de los grandes mercados de la Ciencia de Datos
+            Otra de las razones es el potencial de la Ciencia de Datos en este entorno; no
+            debería ser un secreto que uno de los grandes mercados de la Ciencia de Datos
             son los algoritmos de recomendacion a usuarios, usados generalmente en
-            sitios de peliculas como Netflix, o en los distintos algoritmos de publicidad.
+            sitios de películas como Netflix, o en los distintos algoritmos de publicidad.
         </p>
         <p>
             Esto es relevante en el anime pues uno de los sitios que los usuarios usan en
-            este grupo de interes es MyAnimeList, el cual cuenta con aproximadamente
-            17 millones de usuarios, esto representa una oportunidad, pues el mismo sitio
-            provee una API con la cual acceder a esta informacion, lo cual implica que
+            este grupo de interés es MyAnimeList, el cual cuenta con aproximadamente
+            17 millones de usuarios; esto representa una oportunidad, pues el mismo sitio
+            provee una API con la cual acceder a esta información, lo cual implica que
             nosotros mismos seremos capaces de acceder a ella.
         </p>
         <p>
-            Pero no simplemente vamos a tratar de hacer un algoritmo de recomendacion,
-            si no mas bien, vamos a buscar distintos grupos dentro de este sitio, con lo cual
+            Pero no simplemente vamos a tratar de hacer un algoritmo de recomendación,
+            si no más bien, vamos a buscar distintos grupos dentro de este sitio, con lo cual
             queremos ver si estos usuarios se encuentran polarizados en sus gustos.
         </p>
     </section>
@@ -91,48 +97,49 @@
         <h2>Información recolectada</h2>
         <p>
             El proyecto lo desarollamos con Python en varios Jupyter Notebook, con
-            varias librerias especializadas en Ciencia de Datos, como Pandas, Numpy, Matplotlib,
-            sklearn, etc. Y otras librerias para manejar el webscraping y el uso de API's, como
+            varias librerías especializadas en Ciencia de Datos, como Pandas, Numpy, Matplotlib,
+            sklearn, etc. Y otras librerías para manejar el webscraping y el uso de API's, como
             requests y BeautifulSoup.
         </p>
         <p>
-            Para la recoleccion de informacion usamos requests y BeautifulSoup, debido a la
-            cantidad de tiempo que se toma recopilar la informacion lo hicimos por 20 partes
-            cada serie, con un total de 5 series, el tiempo de procesamiento fue probablemente
-            mas de 100 horas en total considerando todas las series.
+            Para la recolección de información usamos requests y BeautifulSoup; debido a la
+            cantidad de tiempo que se toma recopilar la información lo hicimos por 20 partes
+            cada serie, con un total de 5 series; el tiempo de procesamiento fue probablemente
+            más de 100 horas en total considerando todas las series.
         </p>
         <p>
-            La informacion que recolectamos fue la siguiente:
+            La información que recolectamos fue la siguiente:
         <p>
         <ul>
-            <li>Las listas de  calificaciones de 20 mil usuarios, de las cuales aproximadamente
-                7000 tenian al menos una calificacion a un anime que hayan completado. Esto fue
+            <li>Las listas de calificaciones de 20 mil usuarios, de las cuales aproximadamente
+                7000 tenían al menos una calificación a un anime que hayan completado. Esto fue
                 hecho en 2 series, una para tener los usuarios y una segunda para obtener sus
                 calificaciones.</li>
             <li>Detalles de los animes calificados por los usuarios en MyAnimeList, como su id,
-                año de lanzamiento, cantidad de usuarios por ese anime, la calificiacion promedio,
-                etc.</li>
-            <li>La informacion de los Animes presentes en Animeplanet, otro sitio que recopila
-                Informacion de distintos animes, en este caso sacamos informacion de este sitio
-                Debido a la mejor calidad de sus tags, tambien conocidas como generos,
-                las cuales tenian una mayor variedad en cuanto a tipo, clasificando asi mejor
-                los distintos animes.<br>Esta tambien fue hecha en 2 series, una para encontrar
-                todos los animes de AnimePlanet y una segunda para obtener las tags.</li>
+                año de lanzamiento, cantidad de usuarios por ese anime, la calificación promedio,
+                etc...</li>
+            <li>La información de los animes presentes en Anime-Planet, otro sitio que recopila
+                información de distintos animes; en este caso sacamos información de este sitio
+                debido a la mejor calidad de sus tags, también conocidos como géneros,
+                los cuales tenían una mayor variedad en cuanto a tipo; clasificando así mejor
+                los distintos animes.<br>Esta también fue hecha en 2 series, una para encontrar
+                todos los animes de Anime-Planet y una segunda para obtener las tags.</li>
         </ul>
         <p>
-            Una vez que recopilamos toda la informacion la recopilamos en archivos unicos
+            Una vez que recopilamos toda la información la recopilamos en archivos únicos
             para su posterior procesamiento.
         </p>
     </section>
     <section>
-        <h2>Procesamiento de informacion</h2>
+        <h2>Procesamiento de información</h2>
         <p>
-            Una vez recolectada esa informacion, pasamos a la parte de procesamiento, lo primero queremos
-            hicimos fue convertirla generalmente a formatos mas amigables.
+            Una vez recolectada esa información, pasamos a la parte de procesamiento, lo primero que hicimos fue
+            convertirla generalmente a formatos más amigables.
         </p>
-        <p>Por ejemplo:<p>
+        <p>Por ejemplo:
+        <p>
         <ul>
-            <li>Las listas de calificaciones por usuario se convirtieron a la forma de una.
+            <li>Las listas de calificaciones por usuario se convirtieron a la forma de una
                 matriz, llamada <strong>users_df</strong>, con el siguiente formato:<br><br>
                 <table>
                     <tr>
@@ -161,12 +168,12 @@
                     </tr>
                 </table><br>
                 Donde cada columna representa un anime y cada fila un usuario, y cada valor es
-                la calificacion que el usuario le dio, NaN significa que el usuario no lo califico,
-                Y en nuestro caso, tambien significa que no lo vio completo.
+                la calificación que el usuario le dio, donde NaN significa que el usuario no lo
+                calificó, y en nuestro caso, también significa que no lo vio completo.
             </li>
             <li>Los detalles de los distintos animes se convirtieron a una tabla llamada
                 <strong>detalles_anime</strong>, no es apropiado nombrar a esta una matriz,
-                pues no es estrictamente numerica.<br>
+                pues no es estrictamente numérica.<br>
                 Para cada anime, contiene:<br><br>
                 <table style="width: 500px; border-collapse: collapse; margin: 0 auto;">
                     <tr>
@@ -187,7 +194,7 @@
                     </tr>
                     <tr>
                         <td>alternative_titles</td>
-                        <td>nombres alternativos.</td>
+                        <td>nombres alternativos</td>
                     </tr>
                     <tr>
                         <td>start_date, end_date</td>
@@ -211,7 +218,8 @@
                     </tr>
                     <tr>
                         <td>num_list_users</td>
-                        <td>Cuantos usuarios la tienen en su lista, Hayan calificado o terminado de ver el anime, o no.</td>
+                        <td>Cuantos usuarios la tienen en su lista, hayan calificado o terminado de ver el anime, o no.
+                        </td>
                     </tr>
                     <tr>
                         <td>num_scoring_users</td>
@@ -219,12 +227,13 @@
                     </tr>
                     <tr>
                         <td>media_type</td>
-                        <td>Indica si fue emitido por television (tv), si para consumo directo en el hogar (ova), si era un
-                            video musical (music), si era una pelicula (movie), etc...</td>
+                        <td>Indica si fue emitido por television (TV), si para consumo directo en el hogar (OVA), si era
+                            un
+                            video musical (Music), si era una pelicula (Movie), etc...</td>
                     </tr>
                     <tr>
                         <td>status</td>
-                        <td>Indica si sigue o no en emision.</td>
+                        <td>Indica si sigue o no en emisión.</td>
                     </tr>
                     <tr>
                         <td>num_episodes</td>
@@ -232,19 +241,20 @@
                     </tr>
                     <tr>
                         <td>start_season</td>
-                        <td>Año y temporada de emision, en la industria del anime la temporada es una caracteristica
-                            importante, si, se refiere a si salio en invierno, otoño, verano, primavera, ademas de
+                        <td>Año y temporada de emisión; en la industria del anime la temporada es una característica
+                            importante. Se refiere a si salió en invierno, otoño, verano, primavera, además de
                             contener el año.</td>
                     </tr>
                     <tr>
                         <td>studios</td>
-                        <td>Las empresas, en este caso llamadas estudios, que estuvieron involucradas en la produccion.</td>
+                        <td>Las empresas, en este caso llamadas estudios, que estuvieron involucradas en la producción.
+                        </td>
                     </tr>
                 </table>
             </li><br>
-            <li>La informacion de AnimePlanet tambien se proceso, utilizamos una base de Datos
-                externa, la cual enlaza id's de MyAnimeList con las URL de AnimePlanet para
-                poder tener las id's en esta tabla, debido a esta union entre ambos sitios,
+            <li>La información de AnimePlanet también se procesó; utilizamos una base de datos
+                externa, la cual enlaza id's de MyAnimeList con las URL de Anime-Planet para
+                poder tener las id's en esta tabla; debido a esta unión entre ambos sitios,
                 esta matriz recibe el nombre de <strong>unified_df</strong>, sus columnas son:<br><br>
                 <table style="width: 500px; border-collapse: collapse; margin: 0 auto;">
                     <tr>
@@ -257,11 +267,11 @@
                     </tr>
                     <tr>
                         <td>URL</td>
-                        <td>La URL hacia ese anime en AnimePlanet</td>
+                        <td>La URL hacia ese anime en Anime-Planet</td>
                     </tr>
                     <tr>
                         <td>Tags</td>
-                        <td>Todas las tags que tiene el anime</td>
+                        <td>Todas los tags que tiene el anime</td>
                     </tr>
                     <tr>
                         <td>Alts</td>
@@ -274,8 +284,8 @@
                 </table>
             </li><br>
             <li><strong>unified_df</strong> en cierto punto del proyecto es transformada en una matriz,
-                provocando que sus columnas sean todos los tags de Animeplanet y sus filas sean todos los
-                Animes con los que estamos trabajando en el proyecto.
+                provocando que sus columnas sean todos los tags de Anime-Planet y sus filas sean todos los
+                animes con los que estamos trabajando en el proyecto.
                 Esta tiene el siguiente formato:<br><br>
                 <table>
                     <tr>
@@ -303,13 +313,15 @@
                         <td>...</td>
                     </tr>
                 </table><br>
-                Donde cada columna representa un genero/tag y cada fila un anime con su id
-                de MyAnimeList.<br>Por cada dato tiene un 0 indicando que el Anime no
-                tiene esa tag y un 1 indicando que si la tiene.
+                Donde cada columna representa un género/tag y cada fila un anime con su id
+                de MyAnimeList.<br>Por cada dato tiene un 0 indicando que el anime no
+                tiene ese tag o un 1 indicando que sí lo tiene.
             </li>
-            <li>Finalmente, como las matrices <strong>users_df</strong> y <strong>unified_df</strong> ahora comparten id's
-                de anime, podemos hacer una multiplicacion matricial entre ambas respecto a este dato.<br><br>
-                Esta nueva matriz, que representa los gustos de anime, se llama <strong>cluster_df</strong>, y es la que sera usada
+            <li>Finalmente, como las matrices <strong>users_df</strong> y <strong>unified_df</strong> ahora comparten
+                id's
+                de anime, podemos hacer una multiplicación matricial entre ambas respecto a este dato.<br><br>
+                Esta nueva matriz, que representa los gustos de anime, se llama <strong>cluster_df</strong>, y es la que
+                será usada
                 para nuestra meta de agrupar usuarios.:<br><br>
                 <table>
                     <tr>
@@ -337,15 +349,15 @@
                         <td>...</td>
                     </tr>
                 </table><br>
-                Donde cada columna representa un genero/tag y cada fila un usuario.<br>
-                Por cada dato tiene la suma de calificaciones de animes que tenian esa tag.<br>
+                Donde cada columna representa un género/tag y cada fila un usuario.<br>
+                Por cada dato tiene la suma de calificaciones de animes que tenían ese tag.<br>
                 Por ejemplo, el User_1 ve mucho anime, y da altas calificaciones, y por tanto
                 su puntaje en la tag_1 es de 613.<br>
                 En cambio, la tag_2 es menos popular, y como User_2 no ha calificado mucho anime,
                 su puntaje es de 0.<br><br>
-                Como queremos agrupar los usuarios por gustos, no queremos que ver mucho anime cambie
-                tu gusto, por tanto, normalizamos esta matriz tal que cada usuario sume 1 en sus gustos,
-                esto se hace dividiendo por la suma de sus gustos, queda entonces algo asi:<br><br>
+                Como queremos agrupar los usuarios por gustos, no queremos que ver mucho anime
+                cambie tu gusto, por tanto, normalizamos esta matriz tal que cada usuario sume 1 en
+                sus gustos, esto se hace dividiendo por la suma de sus gustos; queda entonces algo así:<br><br>
                 <table>
                     <tr>
                         <th></th>
@@ -375,68 +387,64 @@
             </li>
         </ul>
     </section>
-  
+
     <section>
-        <h2>Analisis de informacion y resultados.</h2>
+        <h2>Análisis de información y resultados.</h2>
         <p>
             Con estos distintos conjuntos de datos, empezamos a responder ciertas preguntas que
-            teniamos.
+            teníamos.
         </p>
         <h3>Ley de Pareto en los animes y usuarios.</h3>
         <p>
-            La primera de estas que pudimos responder era sobre si los usuarios siguen la ley de pareto,
-            la cual dice que el 80% de los efectos proviene del 20% de las causas.
+            La primera de estas que pudimos responder era sobre si los usuarios siguen la ley de
+            Pareto, la cual dice que el 80% de los efectos proviene del 20% de las causas.
         </p>
         <p>
             En nuestro caso, la ley de Pareto diría que el 20% de los usuarios hace 80% de las
-            calificaciones, o que el 20% de los anime tienen el 80% de las calificaciones.
+            calificaciones, o que el 20% de los animes tienen el 80% de las calificaciones.
         </p>
         <p>
-            Simplemente calculando en <strong>users_df</strong> la cantidad de reviews hechas por usuario,
-            tuvimos el siguiente resultado.
+            Simplemente calculando en <strong>users_df</strong> la cantidad de reviews hechas por
+            usuario, tuvimos el siguiente resultado.
         </p>
         <img src="assets/img/reviews_por_usuario.png" width="300" height="200">
         <p>
             Los resultados dicen:<br>
-            <em>El 20% de los usuarios tiene 387989 calificaciones, lo cual es un 69.53% del total</em><br>
-            <em>El 80% de los usuarios tiene 170050 calificaciones, lo cual es un 30.47% del total</em><br>
-            Lo cual a pesar de no ser exactamente 80-20, si es bastante cercano, especialmente tomando en
-            cuenta que nuestra recoleccion de informacion no podia tener mas de 1000 animes por usuario.<br>
+            <em>El 20% de los usuarios tiene 387989 calificaciones, lo cual es un 69.53% del total.</em><br>
+            <em>El 80% de los usuarios tiene 170050 calificaciones, lo cual es un 30.47% del total.</em><br>
+            Lo cual a pesar de no ser exactamente 80-20, sí es bastante cercano, especialmente tomando en
+            cuenta que nuestra recolección de información no podía tener más de 1000 animes por usuario.<br>
             Por tanto, podemos decir que la ley de Pareto se cumple en este caso.
         </p>
-        <p>Podemos probar a hacer lo mismo pero desde la perpectiva de los mismos anime.</p>
+        <p>Podemos probar a hacer lo mismo pero desde la perpectiva de los mismos animes.</p>
         <img src="assets/img/reviews_por_anime.png" width="300" height="200">
         <p>
             Los resultados dicen:<br>
-            <em>El 20% de los anime tiene 479727 calificaciones, lo cual es un 85.97% del total</em><br>
-            <em>El 80% de los anime tiene 78312 calificaciones, lo cual es un 14.03% del total</em><br>
-            Lo cual a pesar de no ser exactamente 80-20, si es bastante cercano, especialmente tomando en
-            cuenta que nuestra recoleccion de informacion no podia tener mas de 1000 animes por usuario.<br>
+            <em>El 20% de los animes tiene 479727 calificaciones, lo cual es un 85.97% del total.</em><br>
+            <em>El 80% de los animes tiene 78312 calificaciones, lo cual es un 14.03% del total.</em><br>
+            Lo cual a pesar de no ser exactamente 80-20, sí es bastante cercano, especialmente tomando en
+            cuenta que nuestra recolección de información no podía tener más de 1000 animes por usuario.<br>
             Por tanto, podemos decir que la ley de Pareto se cumple en este caso.
-        </p>
-        <p>
-            Desafortunadamente, la version entregada del proyecto presentaba algunas fallas en estos graficos,
-            algunos graficos estaban mal hechos y mal graficados.
         </p>
         <h3>Animes de culto.</h3>
         <p>
-            Lo segundo que pudimos hacer fue encontrar los distintos animes de culto, encontramos estadisticamente
-            este conjunto de animes, los cuales tienen la caracteristica de ser antiguos pero populares.
+            Lo segundo que pudimos hacer fue encontrar los distintos animes de culto, encontramos estadísticamente
+            este conjunto de animes, los cuales tienen la característica de ser antiguos pero populares.
         </p>
         <img src="assets/img/animes_destacados.png">
         <p>
-            Estos fueron encontrados con la informacion dentro de <strong>detalles_anime</strong>.
+            Estos fueron encontrados con la información dentro de <strong>detalles_anime</strong>.
         </p>
-        <h3>Generos mas y menos correlacionados.</h3>
+        <h3>Generos más y menos correlacionados.</h3>
         <p>
-            Primero veamos los mas correlacionados.
+            Primero veamos los más correlacionados.
         </p>
         <table style="width: 500px; border-collapse: collapse; margin: 0 auto;">
             <tr>
-                <th>Generos mas<br>relacionados.</th>
-                <th>Genero 1</th>
-                <th>Genero 2</th>
-                <th>Porcentaje de<br>correlacion.</th>
+                <th>Géneros más<br>relacionados.</th>
+                <th>Género 1</th>
+                <th>Género 2</th>
+                <th>Porcentaje de<br>correlación.</th>
             </tr>
             <tr>
                 <td>1</td>
@@ -500,14 +508,14 @@
             </tr>
         </table>
         <p>
-            Ahora los mas antirrelacionados.
+            Ahora los más antirrelacionados.
         </p>
         <table style="width: 500px; border-collapse: collapse; margin: 0 auto;">
             <tr>
-                <th>Generos menos<br>relacionados.</th>
-                <th>Genero 1</th>
-                <th>Genero 2</th>
-                <th>Porcentaje de<br>correlacion.</th>
+                <th>Géneros menos<br>relacionados.</th>
+                <th>Género 1</th>
+                <th>Género 2</th>
+                <th>Porcentaje de<br>correlación.</th>
             </tr>
             <tr>
                 <td>1</td>
@@ -581,40 +589,46 @@
             Para esto, usamos la matriz <strong>cluster_df</strong>, la cual contiene los gustos de los usuarios.
         </p>
         <p>
-            Los resultados no son tan conclusivos, pero fuimos capaces de concluir que no solo la comunidad
-            de anime tiene distintos gustos, si no que tambien difieren en cantidad de usuarios
-            y su nivel de consumo de anime.
+            Los resultados no son tan conclusivos, pero fuimos capaces de concluir que no solo las
+            comunidades de animes tienen distintos gustos, si no que también difieren en cantidad de
+            usuarios y su nivel de consumo de anime.
         </p>
         <p>
-            Para poder hacer esto, tuvimos que hacer una reduccion de dimensionalidad junto con un
-            algoritmo de clustering, en este caso usamos PCA y KMeans respectivamente.
+            Para poder hacer esto, tuvimos que hacer una reducción de dimensionalidad junto con un
+            algoritmo de clustering; en este caso usamos PCA y KMeans respectivamente.
         </p>
         <div>
             <img src="assets/img/codo_pca.png" width="300" height="200">
             <img src="assets/img/codo_kmeans.png" width="300" height="200">
         </div>
         <p>
-            Por el metodo del codo pudimos concluir que lo optimo fue usar 7 componentes principales, y aproximadamente 20 grupos, aunque un poco menos
-            pudo haber sido un poco mas eficiente.
+            Por el método del codo pudimos concluir que lo óptimo fue usar 7 componentes
+            principales, y aproximadamente 20 grupos; aunque en retrospectiva un poco menos pudo
+            haber sido un poco más eficiente.
         </p>
         <p>
-            A pesar de usar 7 componentes princiapales, lo cual implicaria 7 dimensiones para poder visualizar, por la naturaleza del Principal Component Analysis, los
-            primeros componentes son tambien los mas significantes, por lo cual, fuimos capaces de graficar los 20 grupos en un grafico 3D de todas formas.
+            A pesar de usar 7 componentes princiapales, lo cual implicaría 7 dimensiones para poder visualizar, por la
+            naturaleza del Principal Component Analysis, los
+            primeros componentes son también los más significantes; por lo cual, fuimos capaces de graficar los 20
+            grupos en un gráfico 3D de todas formas.
         </p>
         <p>
-            Los graficos van de esta forma:
-            <ul>
-                <li>Pueden verse los distintos grupos unidos por lineas, que los llevan a distintos animes.</li>
-                <li>Estan categorizados numericamente, pues algunos colores son dificiles de distinguir, sea por ejemplo el 5, 6, 7, 8, 9.</li>
-                <li>Cada grupo tiene su propia breve descripcion, separados por las siguientes 3 macro-categorias.</li>
-                <li>Casual: Grupo que en promedio ha visto de 0 a 10 animes.</li>
-                <li>Estándar: Grupo que en promedio ha visto de 10 a 50 animes.</li>
-                <li>Acérrimo: Grupo que en promedio ve mas de 50 animes.</li>
-                <li>Debido a que algunos grupos cubren por encima otros, cada iteracion, o nivel, aumenta la transparancia de los grupos ya vistos.</li>
-                <li>
-                    Las imagenes tienen tal resolucion que si las abres en una pestaña nueva, podras hacer suficiente zoom como para poder ver los nombres de los
-                    distintos animes de cada grupo.</li>
-            </ul>
+            Los gráficos van de esta forma:
+        <ul>
+            <li>Pueden verse los distintos grupos unidos por líneas, que los llevan a distintos animes.</li>
+            <li>Están categorizados numéricamente, pues algunos colores son difíciles de distinguir, sea por ejemplo el
+                5, 6, 7, 8, 9.</li>
+            <li>Cada grupo tiene su propia breve descripción, separados por las siguientes 3 macro-categorias.</li>
+            <li>Casual: Grupo que en promedio ha visto de 0 a 10 animes.</li>
+            <li>Estándar: Grupo que en promedio ha visto de 10 a 50 animes.</li>
+            <li>Acérrimo: Grupo que en promedio ve más de 50 animes.</li>
+            <li>Debido a que algunos grupos cubren por encima otros, cada iteración, o nivel, aumenta la transparencia
+                de los grupos ya vistos.</li>
+            <li>
+                Nótese que las imagenes tienen tal resolución que si las abres en una pestaña
+                nueva, se podrá hacer suficiente zoom como para poder ver los nombres de los
+                distintos animes de cada grupo.</li>
+        </ul>
         </p>
         <img src="assets/img/PCA Nivel 1.png" width="500" height="400">
         <img src="assets/img/PCA Nivel 2.png" width="500" height="400">
