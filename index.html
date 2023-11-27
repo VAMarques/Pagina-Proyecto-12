@@ -345,7 +345,33 @@
                 su puntaje es de 0.<br><br>
                 Como queremos agrupar los usuarios por gustos, no queremos que ver mucho anime cambie
                 tu gusto, por tanto, normalizamos esta matriz tal que cada usuario sume 1 en sus gustos,
-                esto se hace dividiendo por la suma de sus gustos.<br>
+                esto se hace dividiendo por la suma de sus gustos, queda entonces algo asi:<br><br>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Tag_1</th>
+                        <th>Tag_2</th>
+                        <th>...</th>
+                    </tr>
+                    <tr>
+                        <td>User_1</td>
+                        <td>0.6</td>
+                        <td>0.007</td>
+                        <td>...</td>
+                    </tr>
+                    <tr>
+                        <td>User_2</td>
+                        <td>0.4</td>
+                        <td>0</td>
+                        <td>...</td>
+                    </tr>
+                    <tr>
+                        <td>...</td>
+                        <td>...</td>
+                        <td>...</td>
+                        <td>...</td>
+                    </tr>
+                </table><br>
             </li>
         </ul>
     </section>
@@ -356,6 +382,7 @@
             Con estos distintos conjuntos de datos, empezamos a responder ciertas preguntas que
             teniamos.
         </p>
+        <h3>Ley de Pareto en los animes y usuarios.</h3>
         <p>
             La primera de estas que pudimos responder era sobre si los usuarios siguen la ley de pareto,
             la cual dice que el 80% de los efectos proviene del 20% de las causas.
@@ -368,7 +395,7 @@
             Simplemente calculando en <strong>users_df</strong> la cantidad de reviews hechas por usuario,
             tuvimos el siguiente resultado.
         </p>
-        <img src="assets/img/reviews_por_usuario.png" width="100%"" height="200">
+        <img src="assets/img/reviews_por_usuario.png" width="300" height="200">
         <p>
             Los resultados dicen:<br>
             <em>El 20% de los usuarios tiene 387989 calificaciones, lo cual es un 69.53% del total</em><br>
@@ -391,6 +418,7 @@
             Desafortunadamente, la version entregada del proyecto presentaba algunas fallas en estos graficos,
             algunos graficos estaban mal hechos y mal graficados.
         </p>
+        <h3>Animes de culto.</h3>
         <p>
             Lo segundo que pudimos hacer fue encontrar los distintos animes de culto, encontramos estadisticamente
             este conjunto de animes, los cuales tienen la caracteristica de ser antiguos pero populares.
@@ -399,9 +427,7 @@
         <p>
             Estos fueron encontrados con la informacion dentro de <strong>detalles_anime</strong>.
         </p>
-        <p>
-            Otra cosa que encontramos fueron los generos mas y menos correlacionados.
-        </p>
+        <h3>Generos mas y menos correlacionados.</h3>
         <p>
             Primero veamos los mas correlacionados.
         </p>
@@ -547,9 +573,25 @@
         <p>
             Estos resultados fueron obtenidos con <strong>unified_df</strong>.
         </p>
+        <h3>Clustering de usuarios.</h3>
         <p>
-            Ahora el clustering.
+            Finalmente, llegamos a la parte principal del proyecto, el clustering de usuarios.
         </p>
+        <p>
+            Para esto, usamos la matriz <strong>cluster_df</strong>, la cual contiene los gustos de los usuarios.
+        </p>
+        <p>
+            Los resultados no son tan conclusivos, pero fuimos capaces de concluir que no solo la comunidad
+            de anime tiene distintos gustos, si no que tambien difieren en cantidad de usuarios
+            y su nivel de consumo de anime.
+        </p>
+        <p>
+            Para poder hacer esto, tuvimos que hacer una reduccion de dimensionalidad junto con un
+            algoritmo de clustering, en este caso usamos PCA y KMeans respectivamente.
+        </p>
+        <div>
+            <img src="assets/img/cluster_1.png" width="300" height="200">
+            <img src="assets/img/cluster_2.png" width="300" height="200">
     </section>
 
     <footer>
