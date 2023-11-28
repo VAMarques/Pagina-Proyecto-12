@@ -12,7 +12,6 @@
             margin: 0;
             padding: 0;
             background-color: #EDEDED;
-            color: #333;
         }
 
         header,
@@ -56,7 +55,6 @@
         p,
         li {
             margin-bottom: 10px;
-            color: #512DA8
         }
     </style>
 </head>
@@ -69,7 +67,7 @@
     </header>
 
     <section>
-        <h2>Motivación</h2>
+        <h2>Motivación.</h2>
         <p>
             A algunos podría parecerle extraña la idea de hacer un análisis de este tipo,
             pero pensando que los adolescentes y jovenes adultos son su principal
@@ -394,7 +392,7 @@
     </section>
 
     <section>
-        <h2>Análisis de información y resultados</h2>
+        <h2>Análisis de información y resultados.</h2>
         <p>
             Con estos distintos conjuntos de datos, empezamos a responder ciertas preguntas que
             teníamos.
@@ -431,7 +429,7 @@
             cuenta que nuestra recolección de información no podía tener más de 1000 animes por usuario.<br>
             Por tanto, podemos decir que la ley de Pareto se cumple en este caso.
         </p>
-        <h3>Animes de culto</h3>
+        <h3>Animes de culto.</h3>
         <p>
             Lo segundo que pudimos hacer fue encontrar los distintos animes de culto, encontramos estadísticamente
             este conjunto de animes, los cuales tienen la característica de ser antiguos pero populares.
@@ -440,7 +438,7 @@
         <p>
             Estos fueron encontrados con la información dentro de <strong>detalles_anime</strong>.
         </p>
-        <h3>Generos más y menos correlacionados</h3>
+        <h3>Generos más y menos correlacionados.</h3>
         <p>
             Primero veamos los más correlacionados.
         </p>
@@ -586,7 +584,7 @@
         <p>
             Estos resultados fueron obtenidos con <strong>unified_df</strong>.
         </p>
-        <h3>Clustering de usuarios</h3>
+        <h3>Clustering de usuarios.</h3>
         <p>
             Finalmente, llegamos a la parte principal del proyecto, el clustering de usuarios.
         </p>
@@ -643,6 +641,98 @@
         <img src="assets/img/PCA Nivel 3.png" width="500" height="400">
         <h4>Nivel 4.</h4>
         <img src="assets/img/PCA Nivel 4.png" width="500" height="400">
+        <h4>Tambien podemos ver cuanto anime ven en distintas metricas los distintos grupos, con unos boxplot.</h4>
+        <img src="assets/img/boxplot_grupos.png" width="500" height="400">
+        <h4>Y por otra parte podemos ver cuantos usuarios tiene cada grupo.</h4>
+        <img src="assets/img/barplot_grupos.png" width="500" height="400">
+        <h4>Finalmente tenemos una tabla con los generos mas populares de cada grupo.</h4>
+        <table style="width: 700px; border-collapse: collapse; margin: 0 auto;">
+            <tr>
+                <th>Grupo</th>
+                <th>Generos mas populares en orden</th>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>Action, Shounen, Fantasy, Explicit Violence, Mature Themes, Drama, Horror, Dark Fantasy, Military, Overpowered Main Characters</td>
+
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Comedy, Romance, School Life, Drama, Shounen, Fantasy, Action, Seinen, Slice of Life, Shoujo</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Drama, Action, Fantasy, Mature Themes, Shounen, Comedy, School Life, Romance, Supernatural, Violence</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Drama, Romance, School Life, Comedy, Supernatural, Seinen, School Club, Coming of Age, Opposites Attract, Body Swapping</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Action, Shounen, Comedy, Drama, Violence, School Life, Superpowers, Supernatural, Sci Fi, Swordplay</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Action, Shounen, Violence, Fantasy, Drama, Adventure, Mature Themes, Conspiracy, Mystery, Siblings</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Action, Shounen, Ninja, Drama, Revenge, Japanese Mythology, Orphans, Rivalries, Hand to Hand Combat, Fantasy</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Shounen, Sports, School Club, Tournaments, School Life, Volleyball, Animeism, Basketball, Comedy, Soccer</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Comedy, School Life, Shounen, Romance, Slice of Life, Seinen, Romantic Comedy, Based on a 4-Koma Manga, School Club, Ecchi</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Shounen, Action, Drama, Comedy, School Life, Supernatural, Mature Themes, Violence, Fantasy, Explicit Violence</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Psychological, Mature Themes, Sci Fi, Violence, Conspiracy, Thriller, Suicide, Drama, Action, Supernatural</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Action, Fantasy, Shounen, Comedy, Drama, Adventure, Violence, School Life, Sci Fi, Supernatural</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Comedy, Action, School Life, Shounen, Drama, Romance, Fantasy, Supernatural, Violence, Sci Fi</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Action, Shounen, Supernatural, Violence, Fantasy, Superpowers, Adventure, Drama, Comedy, Martial Arts</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Supernatural, Shounen, Psychological, Mystery, Overpowered Main Characters, Rivalries, Contemporary Fantasy, Mind Games, Urban Fantasy, Thriller</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>Action, Sci Fi, Drama, Violence, Mecha, Superpowers, Comedy, Mature Themes, Post-apocalyptic, Nudity</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>Action, Fantasy, Shounen, Explicit Violence, Dark Fantasy, Horror, Military, Outside World, Cannibalism, Isolated Society</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>Drama, Romance, School Life, Shounen, Mature Themes, Action, Supernatural, Comedy, Violence, Melancholy</td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>Action, Shounen, Violence, Drama, Mature Themes, Fantasy, Sci Fi, Supernatural, Adventure, Explicit Violence</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>Fantasy, Action, Magic, Adventure, Comedy, Person in a Strange World, Shounen, Isekai, Overpowered Main Characters, Violence</td>
+            </tr>
+        </table>
     </section>
 
     <section>
@@ -668,17 +758,16 @@
             el mejor de los casos te dice que tienes prohibido acceder a la informacion, y en el peor de los casos, te prohiben acceder mas a la
             pagina.
         </p>
-        <p>
             Debido a eso, tuvimos que pretender que somos un usuario normal y no un robot, lo cual podria entrar en problematicas al nivel legal
             si fuera a mayores, incluso podriamos prohibir el acceso de todo Chile a la pagina, a pesar de que no se llego a tal punto.
         </p>
         <h3>Problemas con nuestro analisis.</h3>
-        <p>
+        </p>
             Es posible que nuestro analisis tenga ciertos errores, uno de ellos es el uso de multiplicación matricial en la creacion de <strong>cluster_df</strong>,
             No exactamente debido a que sea malo multiplicar matrices, si no porque quizas no fue necesario con lo que hicimos al final, si es verdad que pudimos encontrar
             las tags asociadas a cada uno de los grupos, en cambio, mostrar los animes de estos grupos llama mas la atencion que un monton de generos que hay que leer.
         </p>
-        <p>
+        </p>
             En cambio, podriamos haber hecho PCA directamente con las ratings de usuarios y entonces haber hecho agrupamiento, para tener directamente los animes mas
             populares entre cada grupo.
         </p>
@@ -707,6 +796,38 @@
             Encontrar un mejor modelo para el clustering, para lograr obtener grupos mas significantes, y reducir los errores en las distintas metricas.
         </p>
 
+    </section>
+
+    <section>
+        <h2>Fuentes de datos.</h2>
+        <p>
+            La mayoria de fuentes de datos vienen de simple Web-Scraping de MyAnimeList y Anime-Planet, sin embargo, fue usada la API de MyAnimeList, la cual requiere un token, una vez sea publico el repositorio,
+            el token no sera accesible, asi que si quieren replicar el proyecto tendran que crear su propio token.
+        </p>
+        <ul>
+            <li><a href="https://myanimelist.net/">MyAnimeList</a></li>
+            <li><a href="https://www.anime-planet.com/">Anime-Planet</a></li>
+            <li><a href="https://myanimelist.net/apiconfig/references/api/v2">MyAnimeList API</a></li>
+        </ul>
+        <p>
+            Adicionalmente, para poder relacionar juntas las bases de datos de Anime-Planet con MyAnimeList, fue usada una base de datos externa que une las id's de
+            MyAnimeList con las URL de Anime-Planet, la base de datos se llama <em>Anime Offline Database</em>.
+        </p>
+        <ul>
+            <li><a href="https://github.com/manami-project/anime-offline-database">Anime Offline Database</a></li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Repositorios.</h2>
+        <p>
+            El proyecto cuenta con 2 repositorios, el que tiene el codigo, y el de la presentacion, una vez el codigo sea publico seran capaces de replicar el proyecto, aunque
+            es necesario mucho tiempo de espera para tener toda la informacion.
+        </p>
+        <ul>
+            <li><a href="https://github.com/VAMarques/Proyecto-Grupo-12">Repositorio con el codigo.</a></li>
+            <li><a href="https://github.com/VAMarques/Pagina-Proyecto-12">Repositorio con el sitio web.</a></li>
+        </ul>
     </section>
 
     <footer>
