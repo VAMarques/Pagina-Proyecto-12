@@ -40,6 +40,10 @@
             text-align: left;
         }
 
+        th {
+            text-align: center;
+        }
+
         tr:nth-child(even) {
             background-color: rgba(221, 221, 221, 0.7);
         }
@@ -614,7 +618,7 @@
         <p>
             A pesar de usar 7 componentes princiapales, lo cual implicaría 7 dimensiones para poder visualizar, por la
             naturaleza del Principal Component Analysis, los
-            primeros componentes son también los más significantes; por lo cual, fuimos capaces de graficar los 20
+            primeros componentes son también los más significativos; por lo cual, fuimos capaces de graficar los 20
             grupos en un gráfico 3D de todas formas.
         </p>
         <p>
@@ -630,28 +634,28 @@
             <li>Debido a que algunos grupos cubren por encima otros, cada iteración, o nivel, aumenta la transparencia
                 de los grupos ya vistos.</li>
             <li>
-                Nótese que las imagenes tienen tal resolución que si se abren en una pestaña
+                Nótese que las imágenes tienen tal resolución que si se abren en una pestaña
                 nueva, se podrá hacer suficiente zoom como para poder ver los nombres de los
                 distintos animes de cada grupo.</li>
         </ul>
         </p>
-        <h4>Nivel 1.</h4>
+        <h4>Nivel 1</h4>
         <img src="assets/img/PCA Nivel 1.png" width="500" height="400">
-        <h4>Nivel 2.</h4>
+        <h4>Nivel 2</h4>
         <img src="assets/img/PCA Nivel 2.png" width="500" height="400">
-        <h4>Nivel 3.</h4>
+        <h4>Nivel 3</h4>
         <img src="assets/img/PCA Nivel 3.png" width="500" height="400">
-        <h4>Nivel 4.</h4>
+        <h4>Nivel 4</h4>
         <img src="assets/img/PCA Nivel 4.png" width="500" height="400">
-        <h4>Tambien podemos ver cuanto anime ven en distintas metricas los distintos grupos, con unos boxplot.</h4>
+        <h4>También podemos ver cuántos animes ven en distintas métricas los disímiles grupos, con unos boxplot.</h4>
         <img src="assets/img/boxplot_grupos.png" width="500" height="400">
-        <h4>Y por otra parte podemos ver cuantos usuarios tiene cada grupo.</h4>
+        <h4>Y por otra parte podemos ver cuántos usuarios tiene cada grupo.</h4>
         <img src="assets/img/barplot_grupos.png" width="500" height="400">
-        <h4>Finalmente tenemos una tabla con los generos mas populares de cada grupo.</h4>
+        <h4>Finalmente, tenemos una tabla con los géneros más populares de cada grupo.</h4>
         <table style="width: 700px; border-collapse: collapse; margin: 0 auto;">
             <tr>
                 <th>Grupo</th>
-                <th>Generos mas populares en orden</th>
+                <th>Géneros más populares en orden</th>
             </tr>
             <tr>
                 <td>0</td>
@@ -738,65 +742,72 @@
     </section>
 
     <section>
-        <h2>Retroalimentacion, retrospectiva, problematicas, y posibles extensiones.</h2>
-        <h3>Problemas con nuestras bases de datos.</h3>
+        <h2>Retroalimentación, retrospectiva, problemáticas, y posibles extensiones</h2>
+        <h3>Problemas con nuestras bases de datos</h3>
         <p>
-            Uno de los problemas que encontramos fue el tiempo que se tarda en obtener la inforamacion de los distintos sitios,
-            tardandose aproximadamente 100 horas con todas las requests que fueron necesarias, siendo unas 60000 como minimo,
+            Uno de los problemas que encontramos fue el tiempo que se tarda en obtener la inforamación de los distintos sitios,
+            tardándose aproximadamente 100 horas con todas las requests que fueron necesarias, siendo unas 60.000 como mínimo,
             tomando en cuenta usuarios, animes, y tags. Otro problema con los datos es la baja escalabilidad, pues si se tarda tanto en
-            obtener los usuarios, entonces hacer un millon de usuarios seria complicado, ademas hay que tener en cuenta
-            que una vez pase cierto tiempo la informacion sera desactualizada pues los usuarios habran visto nuevos anime.
+            obtener los usuarios, entonces hacer un millón de usuarios sería complicado, además hay que tener en cuenta
+            que una vez pase cierto tiempo la información estará desactualizada pues los usuarios
+            podrán haber modificado su lista de animes.
         </p>
         <p>
-            Otro problema, esta vez en el ambito moral, es la invasion de privacidad que se estaria haciendo hacia los usuarios de MyAnimeList,
-            en general, esta es una tematica constante cuando uno piensa en temas como la publicidad, o los algoritmos de recomendacion, pues
-            estos utilizan tu informacion personal para poder darte recomendaciones personalizadas, y a algunos no les parece correcto que
-            informacion privada sea usada de esta manera. Sin embargo, con MyAnimeList no hay problema, pues los usuarios pueden hacer sus
-            listas privadas, esas listas no son accesibles usando webscraping, y por tanto este problema seria poco relevante.
+            Otro problema, esta vez en el ámbito moral, es la invasión de privacidad que se estaría haciendo hacia los usuarios de MyAnimeList;
+            en general, esta es una temática constante cuando uno piensa en temas como la publicidad, o los algoritmos de recomendación, pues
+            estos utilizan tu información personal para poder darte recomendaciones personalizadas, y a algunos no les parece correcto que
+            información privada sea usada de esta manera. Sin embargo, con MyAnimeList no hay mucho
+            problema, pues los usuarios pueden hacer sus
+            listas privadas; esas listas no son accesibles usando Web-Scraping, y por tanto este
+            problema sería poco relevante realmente.
         </p>
         <p>
-            Por otro lado, un problema moral que si es relevante es el uso de la informacion de Anime-Planet, pues este sitio tiene un sistema
-            agresivo para evitar el uso de Web-Scraping dentro de sus paginas. Este sistema si te detecta como usuario automatico, un robot, en
-            el mejor de los casos te dice que tienes prohibido acceder a la informacion, y en el peor de los casos, te prohiben acceder mas a la
-            pagina.
+            Por otro lado, un problema moral que sí es relevante es el uso de la información de Anime-Planet, pues este sitio tiene un sistema
+            agresivo para evitar el uso de Web-Scraping dentro de sus páginas. Este sistema si te detecta como usuario automático, un robot, en
+            el mejor de los casos te dice que tienes prohibido acceder a la información, y en el peor de los casos, te prohiben acceder más a la
+            página.
         </p>
         <p>
-            Debido a eso, tuvimos que pretender que somos un usuario normal y no un robot, lo cual podria entrar en problematicas al nivel legal
-            si fuera a mayores, incluso podriamos prohibir el acceso de todo Chile a la pagina, a pesar de que no se llego a tal punto.
+            Debido a eso, tuvimos que pretender que somos un usuario normal y no un robot, lo cual podría entrar en problemáticas a nivel legal
+            si fuera a mayores; incluso podríamos prohibir el acceso de todo Chile a la página; a pesar de que no se llegó a tal punto.
         </p>
-        <h3>Problemas con nuestro analisis.</h3>
+        <h3>Problemas con nuestro análisis</h3>
         <p>
-            Es posible que nuestro analisis tenga ciertos errores, uno de ellos es el uso de multiplicación matricial en la creacion de <strong>cluster_df</strong>,
-            No exactamente debido a que sea malo multiplicar matrices, si no porque quizas no fue necesario con lo que hicimos al final, si es verdad que pudimos encontrar
-            las tags asociadas a cada uno de los grupos, en cambio, mostrar los animes de estos grupos llama mas la atencion que un monton de generos que hay que leer.
+            Es posible que nuestro análisis tenga ciertos errores, uno de ellos es el uso de multiplicación matricial en la creación de <strong>cluster_df</strong>.
+            No exactamente debido a que sea malo multiplicar matrices, si no porque quizás no fue necesario con lo que hicimos al final; si es verdad que pudimos encontrar
+            los tags asociados a cada uno de los grupos, en cambio, mostrar los animes de estos grupos llama más la atención que un montón de géneros que hay que leer.
         </p>
         <p>
-            En cambio, podriamos haber hecho PCA directamente con las ratings de usuarios y entonces haber hecho agrupamiento, para tener directamente los animes mas
+            A su vez, podríamos haber hecho PCA directamente con las ratings de usuarios y entonces haber hecho agrupamiento, para tener directamente los animes más
             populares entre cada grupo.
         </p>
         <p>
-            Otro problema es la inpredicibilidad y dificultad en el agrupamiento de usuarios, principalmente debido a que los algoritmos de agrupamiento no siempre dan el mismo
-            resultado, y mas encima, se vuelve dificil encontrar un algoritmo apropiado, usamos KMeans con 7 dimensiones y 20 grupos, pero por ejemplo, KernelPCA, un algoritmo
-            similar pero que es mejor para informacion no lineal, haya dado mejores resultados.
+            Otro desafío radica en la impredecibilidad y la dificultad para agrupar usuarios, principalmente debido a que los
+            algoritmos de agrupamiento no siempre producen el mismo resultado. Además, encontrar el algoritmo más apropiado es un
+            proceso complejo. Aunque utilizamos KMeans con 7 dimensiones y 20 grupos, descubrimos que algoritmos similares, como
+            KernelPCA, que son más adecuados para información no lineal, podrían ofrecer resultados más efectivos.
         </p>
         <p>
-            Debido a esto, el agrupamiento es quizas la parte mas debil de nuestro proyecto.
+            Debido a esto, el agrupamiento es quizás la parte más debil de nuestro proyecto.
         </p>
         <p>
-            Sin embargo, a pesar de ser debil, sus resultados mas importantes siguen siendo relevantes, pues de todas maneras encontramos ciertos grupos significativamente distintos,
-            por ejemplo, hay grupos que prefieren mas romance, otros mas la accion, pero tambien hay algunos muy especificos, uno de ellos es el grupo 7, el de fans del Spokon, un generos
-            muy cercano al baloncesto, o por ejemplo, el grupo 15, fans de las Mechas, un genero de anime que involucra robots gigantes que son piloteados por los protagonistas.
+            Sin embargo, a pesar de ser débil, sus resultados más importantes siguen siendo
+            relevantes, pues de todas maneras encontramos ciertos grupos significativamente
+            distintos, en un ejemplo, hay grupos que prefieren más romance, otros más la acción,
+            pero también hay algunos muy específicos, uno de ellos es el grupo 7, el de fans del
+            Spokon, un género muy cercano al baloncesto, o, en otro caso, el grupo 15, fans de los mechas, un género de anime que involucra robots gigantes que son piloteados por los protagonistas.
         </p>
         <p>
-            Ahora que se han mencionado las distintas problematicas, es mas sencillo hablar de como extender el trabajo.
+            Ahora que se han mencionado las distintas problemáticas, es más sencillo hablar de cómo extender el trabajo.
         </p>
-        <h3>Posibles extensiones.</h3>
+        <h3>Posibles extensiones</h3>
         <p>
-            Junto con la informacion de calificaciones de usuarios a Animes que completaron, tambien tenemos informacion sobre lo que planean ver en el futuro, esta informacion puede ser util
-            si se quisiera hacer un algoritmo de recomendacion, pues este podria entrenarse con lo que los mismos usuarios desean ver en el futuro.
+            Junto con la información de calificaciones de usuarios a animes que completaron, también tenemos información sobre lo que planean ver en el futuro; esta información puede ser útil
+            si se quisiera hacer un algoritmo de recomendación, pues este podría entrenarse con lo
+            que los mismos usuarios desean ver a posteriori.
         </p>
         <p>
-            Encontrar un mejor modelo para el clustering, para lograr obtener grupos mas significantes, y reducir los errores en las distintas metricas.
+            Encontrar un mejor modelo para el clustering, para lograr obtener grupos más significantes, y reducir los errores en las distintas métricas.
         </p>
 
     </section>
@@ -804,8 +815,9 @@
     <section>
         <h2>Fuentes de datos.</h2>
         <p>
-            La mayoria de fuentes de datos vienen de simple Web-Scraping de MyAnimeList y Anime-Planet, sin embargo, fue usada la API de MyAnimeList, la cual requiere un token, una vez sea publico el repositorio,
-            el token no sera accesible, asi que si quieren replicar el proyecto tendran que crear su propio token.
+            La mayoría de fuentes de datos vienen de simple Web-Scraping de MyAnimeList y Anime-Planet, sin embargo, fue usada la API de MyAnimeList, la cual requiere un token; una vez sea público el repositorio,
+            el token no será accesible, así que si se desea replicar el proyecto se tendrá que
+            crear su propio token.
         </p>
         <ul>
             <li><a href="https://myanimelist.net/">MyAnimeList</a></li>
@@ -814,7 +826,7 @@
         </ul>
         <p>
             Adicionalmente, para poder relacionar juntas las bases de datos de Anime-Planet con MyAnimeList, fue usada una base de datos externa que une las id's de
-            MyAnimeList con las URL de Anime-Planet, la base de datos se llama <em>Anime Offline Database</em>.
+            MyAnimeList con las URL de Anime-Planet; la base de datos se llama <em>Anime Offline Database</em>.
         </p>
         <ul>
             <li><a href="https://github.com/manami-project/anime-offline-database">Anime Offline Database</a></li>
@@ -822,14 +834,15 @@
     </section>
 
     <section>
-        <h2>Repositorios.</h2>
+        <h2>Repositorios</h2>
         <p>
-            El proyecto cuenta con 2 repositorios, el que tiene el codigo, y el de la presentacion, una vez el codigo sea publico seran capaces de replicar el proyecto, aunque
-            es necesario mucho tiempo de espera para tener toda la informacion.
+            El proyecto cuenta con 2 repositorios, el que tiene el código, y el de la presentación,
+            una vez el código sea público será posible replicar el proyecto; aunque
+            es necesario mucho tiempo de espera para tener toda la información.
         </p>
         <ul>
-            <li><a href="https://github.com/VAMarques/Proyecto-Grupo-12">Repositorio con el codigo.</a></li>
-            <li><a href="https://github.com/VAMarques/Pagina-Proyecto-12">Repositorio con el sitio web.</a></li>
+            <li><a href="https://github.com/VAMarques/Proyecto-Grupo-12">Repositorio con el código</a></li>
+            <li><a href="https://github.com/VAMarques/Pagina-Proyecto-12">Repositorio con el sitio web</a></li>
         </ul>
     </section>
 
