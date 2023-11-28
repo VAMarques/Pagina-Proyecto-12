@@ -635,10 +635,77 @@
                 distintos animes de cada grupo.</li>
         </ul>
         </p>
+        <h4>Nivel 1.</h4>
         <img src="assets/img/PCA Nivel 1.png" width="500" height="400">
+        <h4>Nivel 2.</h4>
         <img src="assets/img/PCA Nivel 2.png" width="500" height="400">
+        <h4>Nivel 3.</h4>
         <img src="assets/img/PCA Nivel 3.png" width="500" height="400">
+        <h4>Nivel 4.</h4>
         <img src="assets/img/PCA Nivel 4.png" width="500" height="400">
+    </section>
+
+    <section>
+        <h2>Retroalimentacion, retrospectiva, problematicas, y posibles extensiones.</h2>
+        <h3>Problemas con nuestras bases de datos.</h3>
+        <p>
+            Uno de los problemas que encontramos fue el tiempo que se tarda en obtener la inforamacion de los distintos sitios,
+            tardandose aproximadamente 100 horas con todas las requests que fueron necesarias, siendo unas 60000 como minimo,
+            tomando en cuenta usuarios, animes, y tags. Otro problema con los datos es la baja escalabilidad, pues si se tarda tanto en
+            obtener los usuarios, entonces hacer un millon de usuarios seria complicado, ademas hay que tener en cuenta
+            que una vez pase cierto tiempo la informacion sera desactualizada pues los usuarios habran visto nuevos anime.
+        </p>
+        <p>
+            Otro problema, esta vez en el ambito moral, es la invasion de privacidad que se estaria haciendo hacia los usuarios de MyAnimeList,
+            en general, esta es una tematica constante cuando uno piensa en temas como la publicidad, o los algoritmos de recomendacion, pues
+            estos utilizan tu informacion personal para poder darte recomendaciones personalizadas, y a algunos no les parece correcto que
+            informacion privada sea usada de esta manera. Sin embargo, con MyAnimeList no hay problema, pues los usuarios pueden hacer sus
+            listas privadas, esas listas no son accesibles usando webscraping, y por tanto este problema seria poco relevante.
+        </p>
+        <p>
+            Por otro lado, un problema moral que si es relevante es el uso de la informacion de Anime-Planet, pues este sitio tiene un sistema
+            agresivo para evitar el uso de Web-Scraping dentro de sus paginas. Este sistema si te detecta como usuario automatico, un robot, en
+            el mejor de los casos te dice que tienes prohibido acceder a la informacion, y en el peor de los casos, te prohiben acceder mas a la
+            pagina.
+        </p>
+            Debido a eso, tuvimos que pretender que somos un usuario normal y no un robot, lo cual podria entrar en problematicas al nivel legal
+            si fuera a mayores, incluso podriamos prohibir el acceso de todo Chile a la pagina, a pesar de que no se llego a tal punto.
+        </p>
+        <h3>Problemas con nuestro analisis.</h3>
+        </p>
+            Es posible que nuestro analisis tenga ciertos errores, uno de ellos es el uso de multiplicación matricial en la creacion de <strong>cluster_df</strong>,
+            No exactamente debido a que sea malo multiplicar matrices, si no porque quizas no fue necesario con lo que hicimos al final, si es verdad que pudimos encontrar
+            las tags asociadas a cada uno de los grupos, en cambio, mostrar los animes de estos grupos llama mas la atencion que un monton de generos que hay que leer.
+        </p>
+        </p>
+            En cambio, podriamos haber hecho PCA directamente con las ratings de usuarios y entonces haber hecho agrupamiento, para tener directamente los animes mas
+            populares entre cada grupo.
+        </p>
+        <p>
+            Otro problema es la inpredicibilidad y dificultad en el agrupamiento de usuarios, principalmente debido a que los algoritmos de agrupamiento no siempre dan el mismo
+            resultado, y mas encima, se vuelve dificil encontrar un algoritmo apropiado, usamos KMeans con 7 dimensiones y 20 grupos, pero por ejemplo, KernelPCA, un algoritmo
+            similar pero que es mejor para informacion no lineal, haya dado mejores resultados.
+        </p>
+        <p>
+            Debido a esto, el agrupamiento es quizas la parte mas debil de nuestro proyecto.
+        </p>
+        <p>
+            Sin embargo, a pesar de ser debil, sus resultados mas importantes siguen siendo relevantes, pues de todas maneras encontramos ciertos grupos significativamente distintos,
+            por ejemplo, hay grupos que prefieren mas romance, otros mas la accion, pero tambien hay algunos muy especificos, uno de ellos es el grupo 7, el de fans del Spokon, un generos
+            muy cercano al baloncesto, o por ejemplo, el grupo 15, fans de las Mechas, un genero de anime que involucra robots gigantes que son piloteados por los protagonistas.
+        </p>
+        <p>
+            Ahora que se han mencionado las distintas problematicas, es mas sencillo hablar de como extender el trabajo.
+        </p>
+        <h3>Posibles extensiones.</h3>
+        <p>
+            Junto con la informacion de calificaciones de usuarios a Animes que completaron, tambien tenemos informacion sobre lo que planean ver en el futuro, esta informacion puede ser util
+            si se quisiera hacer un algoritmo de recomendacion, pues este podria entrenarse con lo que los mismos usuarios desean ver en el futuro.
+        </p>
+        <p>
+            Encontrar un mejor modelo para el clustering, para lograr obtener grupos mas significantes, y reducir los errores en las distintas metricas.
+        </p>
+
     </section>
 
     <footer>
