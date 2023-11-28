@@ -12,6 +12,7 @@
             margin: 0;
             padding: 0;
             background-color: #EDEDED;
+            color: #333;
         }
 
         header,
@@ -55,6 +56,7 @@
         p,
         li {
             margin-bottom: 10px;
+            color: #512DA8
         }
     </style>
 </head>
@@ -67,7 +69,7 @@
     </header>
 
     <section>
-        <h2>Motivación.</h2>
+        <h2>Motivación</h2>
         <p>
             A algunos podría parecerle extraña la idea de hacer un análisis de este tipo,
             pero pensando que los adolescentes y jovenes adultos son su principal
@@ -392,7 +394,7 @@
     </section>
 
     <section>
-        <h2>Análisis de información y resultados.</h2>
+        <h2>Análisis de información y resultados</h2>
         <p>
             Con estos distintos conjuntos de datos, empezamos a responder ciertas preguntas que
             teníamos.
@@ -429,7 +431,7 @@
             cuenta que nuestra recolección de información no podía tener más de 1000 animes por usuario.<br>
             Por tanto, podemos decir que la ley de Pareto se cumple en este caso.
         </p>
-        <h3>Animes de culto.</h3>
+        <h3>Animes de culto</h3>
         <p>
             Lo segundo que pudimos hacer fue encontrar los distintos animes de culto, encontramos estadísticamente
             este conjunto de animes, los cuales tienen la característica de ser antiguos pero populares.
@@ -438,7 +440,7 @@
         <p>
             Estos fueron encontrados con la información dentro de <strong>detalles_anime</strong>.
         </p>
-        <h3>Generos más y menos correlacionados.</h3>
+        <h3>Generos más y menos correlacionados</h3>
         <p>
             Primero veamos los más correlacionados.
         </p>
@@ -584,7 +586,7 @@
         <p>
             Estos resultados fueron obtenidos con <strong>unified_df</strong>.
         </p>
-        <h3>Clustering de usuarios.</h3>
+        <h3>Clustering de usuarios</h3>
         <p>
             Finalmente, llegamos a la parte principal del proyecto, el clustering de usuarios.
         </p>
@@ -758,16 +760,17 @@
             el mejor de los casos te dice que tienes prohibido acceder a la informacion, y en el peor de los casos, te prohiben acceder mas a la
             pagina.
         </p>
+        <p>
             Debido a eso, tuvimos que pretender que somos un usuario normal y no un robot, lo cual podria entrar en problematicas al nivel legal
             si fuera a mayores, incluso podriamos prohibir el acceso de todo Chile a la pagina, a pesar de que no se llego a tal punto.
         </p>
         <h3>Problemas con nuestro analisis.</h3>
-        </p>
+        <p>
             Es posible que nuestro analisis tenga ciertos errores, uno de ellos es el uso de multiplicación matricial en la creacion de <strong>cluster_df</strong>,
             No exactamente debido a que sea malo multiplicar matrices, si no porque quizas no fue necesario con lo que hicimos al final, si es verdad que pudimos encontrar
             las tags asociadas a cada uno de los grupos, en cambio, mostrar los animes de estos grupos llama mas la atencion que un monton de generos que hay que leer.
         </p>
-        </p>
+        <p>
             En cambio, podriamos haber hecho PCA directamente con las ratings de usuarios y entonces haber hecho agrupamiento, para tener directamente los animes mas
             populares entre cada grupo.
         </p>
